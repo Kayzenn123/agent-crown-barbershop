@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown Barbershop — Hair Cutting & Shave, Kuningan</title>
+<meta name="description" content="Crown Barbershop, Kuningan. Hair cutting & shave sejak 2017. Booking via WhatsApp. Jl. Ahmad Yani, Kuningan 45511.">
+<style>
+  :root{
+    --gold:#d4af37; --gold-soft:#f1d87a; --red:#c0392b; --black:#0b0b0d;
+    --ink:#17171a; --paper:#f7f5f0; --muted:#8a8a90;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--black); color:#eee; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  /* ===== Barber-pole stripe bar ===== */
+  .pole{
+    height:10px;
+    background:repeating-linear-gradient(-45deg,#fff 0 14px,var(--red) 14px 28px,#fff 28px 42px,#1a3a8a 42px 56px);
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:0 20px}
+  /* ===== Header ===== */
+  header.site{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+  .crown-badge{
+    width:40px;height:40px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--gold-soft), var(--gold) 60%, #8a6a1c);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px; box-shadow:0 2px 10px rgba(212,175,55,.35);
+  }
+  .brand b{font-size:17px;letter-spacing:.06em}
+  .brand small{display:block;font-size:10px;letter-spacing:.28em;color:var(--gold);font-weight:600}
+  .hdr-cta{
+    font-size:13px;font-weight:700;color:var(--black);text-decoration:none;
+    background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    padding:9px 16px;border-radius:999px;
+  }
+  /* ===== Hero ===== */
+  .hero{
+    padding:34px 0 40px; text-align:center; position:relative; overflow:hidden;
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, rgba(212,175,55,.14), transparent 60%),
+      linear-gradient(180deg,#111114,#0b0b0d);
+  }
+  .est{
+    display:inline-block;font-size:11px;letter-spacing:.32em;color:var(--gold);
+    border:1px solid rgba(212,175,55,.45);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:42px;line-height:1.05;letter-spacing:.02em;font-weight:800;
+    background:linear-gradient(180deg,#fff 30%,var(--gold-soft) 75%,var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:8px;
+  }
+  .hero .tag{
+    font-size:13px;letter-spacing:.34em;color:#cfcfcf;margin-bottom:14px;font-weight:600;
+  }
+  .hero p.sub{color:#b9b9bf;font-size:15px;max-width:340px;margin:0 auto 24px}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:800;font-size:16px;
+    background:linear-gradient(180deg,#2fd06a,#1da851);
+    color:#fff;padding:15px 30px;border-radius:14px;
+    box-shadow:0 6px 22px rgba(46,204,113,.35);
+  }
+  .btn:active{transform:scale(.97)}
+  .hero .note{font-size:12px;color:var(--muted);margin-top:12px}
+  /* ===== Sections ===== */
+  section{padding:34px 0}
+  section.light{background:var(--paper);color:var(--ink)}
+  .kicker{font-size:11px;letter-spacing:.3em;color:var(--gold);font-weight:700;margin-bottom:6px}
+  section.light .kicker{color:#9a7b1e}
+  h2{font-size:24px;letter-spacing:.02em;margin-bottom:6px}
+  .lede{font-size:14px;color:#9a9aa2;margin-bottom:20px}
+  section.light .lede{color:#5f5f66}
+  /* ===== Services ===== */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .svc{
+    border-radius:16px;padding:20px 16px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#1b1b1f,#101013);
+    border:1px solid rgba(212,175,55,.25);
+  }
+  .svc::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--gold),var(--red));
+  }
+  .svc .icon{
+    width:46px;height:46px;border-radius:14px;margin-bottom:12px;
+    display:flex;align-items:center;justify-content:center;font-size:24px;
+    background:radial-gradient(circle at 30% 30%,rgba(212,175,55,.35),rgba(212,175,55,.08));
+    border:1px solid rgba(212,175,55,.35);
+  }
+  .svc h3{font-size:16px;color:#fff;margin-bottom:4px}
+  .svc p{font-size:13px;color:#a9a9b0}
+  .svc .price{font-size:13px;color:var(--gold-soft);font-weight:700;margin-top:8px;display:block}
+  .svc.wide{grid-column:1/-1}
+  /* ===== About ===== */
+  .about-card{
+    border-radius:16px;padding:22px;
+    background:linear-gradient(160deg,#1b1b1f,#101013);
+    border:1px solid rgba(212,175,55,.25);
+  }
+  .about-card p{font-size:14.5px;color:#c9c9cf}
+  .about-card p + p{margin-top:12px}
+  .about-card b{color:var(--gold-soft)}
+  .fact-row{display:flex;gap:10px;margin-top:16px}
+  .fact{
+    flex:1;text-align:center;border-radius:12px;padding:12px 6px;
+    background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);
+  }
+  .fact b{display:block;font-size:22px;color:var(--gold-soft)}
+  .fact span{font-size:11px;color:#a9a9b0}
+  /* ===== Info praktis ===== */
+  .info-card{
+    background:#fff;border-radius:16px;padding:22px;color:var(--ink);
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+  }
+  .info-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eee}
+  .info-row:last-child{border:none}
+  .info-row .i{
+    width:38px;height:38px;flex:0 0 38px;border-radius:12px;font-size:19px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,#1b1b1f,#333);color:var(--gold-soft);
+  }
+  .info-row b{font-size:14px;display:block}
+  .info-row span{font-size:13px;color:#5f5f66}
+  .map-link{
+    display:block;text-align:center;margin-top:14px;font-size:14px;font-weight:700;
+    color:#9a7b1e;text-decoration:none;border:1px solid #d9c98a;border-radius:12px;padding:12px;
+  }
+  /* ===== Sticky WA CTA ===== */
+  .sticky{
+    position:fixed;bottom:0;left:0;right:0;z-index:50;
+    background:rgba(11,11,13,.92);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(212,175,55,.3);padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .sticky .btn{display:block;text-align:center;border-radius:12px;padding:13px}
+  body{padding-bottom:74px}
+  /* ===== Footer ===== */
+  footer.site{
+    text-align:center;padding:22px 20px calc(96px + env(safe-area-inset-bottom));
+    font-size:11.5px;color:#6f6f76;
+  }
+  footer.site .pole{margin:0 -20px 18px;border-radius:0}
+  footer.site a{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="pole"></div>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="#">
+      <span class="crown-badge">♛</span>
+      <span><b>CROWN</b><small>BARBERSHOP</small></span>
+    </a>
+    <a class="hdr-cta" href="https://wa.me/6288802208506?text=Halo%20Crown%20Barbershop%2C%20saya%20mau%20booking%20potong%20rambut.">Booking</a>
+  </header>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="est">EST. 2017 · KUNINGAN</span>
+    <h1>CROWN<br>BARBERSHOP</h1>
+    <div class="tag">HAIR CUTTING &amp; SHAVE</div>
+    <p class="sub">Potongan rapi, cukuran bersih, pengalaman premium khas barbershop — di jantung Kota Kuningan.</p>
+    <a class="btn" href="https://wa.me/6288802208506?text=Halo%20Crown%20Barbershop%2C%20saya%20mau%20booking%20potong%20rambut.">💬 Booking via WhatsApp</a>
+    <div class="note">Fast response · Tanpa antre lama</div>
+  </div>
+</div>
+
+<div class="pole"></div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">LAYANAN</div>
+    <h2>Apa yang Kami Kerjakan</h2>
+    <p class="lede">Dikerjakan barber berpengalaman, peralatan steril, hasil rapi dan konsisten.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="icon">✂️</div>
+        <h3>Hair Cut</h3>
+        <p>Potong rambut pria semua gaya: fade, taper, classic, undercut, dan lainnya.</p>
+        <span class="price">Tanya via WhatsApp</span>
+      </div>
+      <div class="svc">
+        <div class="icon">🪒</div>
+        <h3>Shave</h3>
+        <p>Cukur jenggot &amp; kumis bersih dengan teknik hot towel khas barbershop.</p>
+        <span class="price">Tanya via WhatsApp</span>
+      </div>
+      <div class="svc wide">
+        <div class="icon">👑</div>
+        <h3>Paket Grooming</h3>
+        <p>Kombinasi potong + cukur untuk tampilan maksimal. Daftar harga lengkap tersedia di pricelist kami — tanyakan langsung via WhatsApp.</p>
+        <span class="price">Tanya via WhatsApp</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">TENTANG</div>
+    <h2>Barbershop Kuningan Sejak 2017</h2>
+    <p class="lede">Tempat langganan tampil rapi para pria Kuningan.</p>
+    <div class="about-card">
+      <p><b>Crown Barbershop</b> melayani hair cutting &amp; shave sejak <b>2017</b> di Jl. Ahmad Yani, Kuningan — titik yang mudah dijangkau di pusat kota.</p>
+      <p>Brand kami dipercaya sebagai <b>kolaborator grooming untuk finalis Mojang Jajaka Kabupaten Kuningan 2026</b> — bukti kualitas yang diakui.</p>
+      <div class="fact-row">
+        <div class="fact"><b>2017</b><span>berdiri</span></div>
+        <div class="fact"><b>9+</b><span>tahun pengalaman</span></div>
+        <div class="fact"><b>2</b><span>layanan utama</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="kicker">INFO PRAKTIS</div>
+    <h2>Kunjungi Kami</h2>
+    <p class="lede">Mampir langsung atau booking dulu via WhatsApp.</p>
+    <div class="info-card">
+      <div class="info-row">
+        <div class="i">📍</div>
+        <div><b>Alamat</b><span>Jl. Ahmad Yani, Kuningan, Kec. Kuningan, Kab. Kuningan 45511 (Kel. Cipicung)</span></div>
+      </div>
+      <div class="info-row">
+        <div class="i">💬</div>
+        <div><b>WhatsApp</b><span>0888-0220-8506 — booking &amp; tanya harga</span></div>
+      </div>
+      <div class="info-row">
+        <div class="i">🕒</div>
+        <div><b>Jam Buka</b><span>Hubungi kami untuk jam buka</span></div>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Crown+Barbershop+Jl+Ahmad+Yani+Kuningan">🗺️ Lihat di Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<div class="pole"></div>
+
+<footer class="site">
+  <div>© Crown Barbershop · Kuningan, Jawa Barat</div>
+  <div style="margin-top:6px">Contoh website dibuat oleh <a href="#">Zenn</a> — web designer Kuningan.</div>
+</footer>
+
+<div class="sticky">
+  <a class="btn" href="https://wa.me/6288802208506?text=Halo%20Crown%20Barbershop%2C%20saya%20mau%20booking%20potong%20rambut.">💬 Booking Sekarang</a>
+</div>
+
+</body>
+</html>
